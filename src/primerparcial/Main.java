@@ -18,32 +18,46 @@ public class Main {
             mostrarMenu();
             System.out.println("Seleccione una opcion: ");
             
-            while(!scanner.hasNextInt()){
-                System.out.println("Error: Ingrese un numero: ");
-                scanner.next();
+            try {
+                opcion = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                opcion = 0;
             }
-             
-            opcion = scanner.nextInt();
             
             switch (opcion) {
                 case 1:
-                    
+                    System.out.println("opcion 1");
+                    //Vehiculos.agregarVehiculos();
+                    break;
                 case 2:
-                    
+                    System.out.println("opcion 2");
+                    break;
                 case 3:
-                
+                    System.out.println("opcion 3");
+                    break;
                 case 4:
-                
+                    System.out.println("opcion 4");
+                    break;
                 case 5:
-                
+                    System.out.println("opcion 5");
+                    break;
                 case 6:
-                
+                    System.out.println("opcion 6");
+                    break;
                 case 7:
-                    
+                    System.out.println("opcion 7");
+                    break;
                 case 8:
+                    System.out.println("\n===============================");
+                    System.out.println("Ha salido del sistema exitosamente");
+                    System.out.println("===============================\n");
+                    break;
                     
                 default:
-                   
+                    System.out.println("\n===============================");
+                    System.out.println("Opcion invalida. porfavor vuelva a ingresar una opcion: ");
+                    System.out.println("===============================\n");
+                    break;
             }
             
             

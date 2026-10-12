@@ -52,8 +52,10 @@ public abstract class Vehiculo{
 
     @Override
     public String toString() {
-        return "Patente: " + patente + " - Marca: " + marca + 
-                " - Capacidad de Pasajeros: " + capacidadPasajeros + " - Año de Fabricacion: " + anioFabricacion; 
+        return "\n-Patente: " + patente + 
+               "\n-Marca: " + marca + 
+                "\n-Capacidad de Pasajeros: " + capacidadPasajeros + 
+                "\n-Año de Fabricacion: " + anioFabricacion; 
                 
                 
                 
