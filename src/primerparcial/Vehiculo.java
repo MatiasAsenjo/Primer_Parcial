@@ -56,12 +56,17 @@ public abstract class Vehiculo{
                "\n-Marca: " + marca + 
                 "\n-Capacidad de Pasajeros: " + capacidadPasajeros + 
                 "\n-Año de Fabricacion: " + anioFabricacion; 
-                
-                
-                
+        
     }
     
-    
-    
+    @Override
+    public boolean equals(Object o){
+        if (this == o)return true;
+        if(o == null || getClass() != o.getClass()) return false;
+        Vehiculo vehiculo = (Vehiculo) o;
+        return this.patente.equalsIgnoreCase(vehiculo.patente);
+    }
+              
+     
     
 }
