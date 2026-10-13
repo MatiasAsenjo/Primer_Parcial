@@ -10,7 +10,7 @@ public class SistemaGestion {
     
     Scanner scanner = new Scanner(System.in);
 
-    public SistemaGestion(ArrayList<Vehiculo> vehiculos) {
+    public SistemaGestion() {
         this.vehiculos = new ArrayList<>();
     }
 
@@ -182,14 +182,93 @@ public class SistemaGestion {
 
     }
     
-    public static void mostrarVehiculos(ArrayList<Vehiculo> lista) {
-        if (lista.isEmpty()) {
+    public void mostrarVehiculos() {
+        if (vehiculos.isEmpty()) {
+            System.out.println("\n=========================");
             System.out.println("No hay vehiculos registrados.");
             return;
         }
-        for (int i = 0; i < lista.size(); i++) {
-            System.out.println(lista.get(i).toString());
+        System.out.println("=== Los Vehiculos Registrados ====");
+        for (int i = 0; i < vehiculos.size(); i++) {
+            System.out.println(vehiculos.get(i).toString());
         }
+        
+        System.out.println("============================\n");
+    }
+    
+    public void realizarServiciosTuristiccos(){
+        if (vehiculos.isEmpty()){
+            System.out.println("\n=========================");
+            System.out.println("No hay vehiculos registrados.");
+            return;
+        }
+        
+        System.out.println("\n===  Iniciando Servicios de Vehiculos ===");
+        
+        for (int i = 0; i < vehiculos.size(); i++) {
+            vehiculos.get(i).realizarServicio();
+        
+        }
+        
+        System.out.println("===========================\n");
+    
+    }
+    
+    public void busarVehiculoPatente(){
+        boolean patenteEncontrada = false;
+        
+        System.out.println("\n=========================");
+        System.out.println("Ingrese la patente a buscar: ");
+        String patenteBuscar = scanner.nextLine().trim();
+        
+        for (int i = 0; i < vehiculos.size(); i++){
+            if (vehiculos.get(i).getPatente().equalsIgnoreCase(patenteBuscar)){
+                System.out.println("Vehiculo encontrado. la patente le pertenece al vehiculo: ");
+                System.out.println(vehiculos.get(i).toString());
+                patenteEncontrada = true;
+                break;
+            }    
+        }
+        
+        if (!patenteEncontrada){
+            System.out.println("No se encontro ningun vehiculo que la patente:" + patenteBuscar);
+        }
+        
+        System.out.println("===============================\n");
+    }
+    
+    public void vehiculoMayorCapacidad(){
+        
+        int capacidadMin = 0;
+        boolean capacidadEncontrada = false;
+        do{
+            System.out.println("==================================");
+            System.out.println("Ingrese el valor minimo de capacidad: ");
+            try {
+                capacidadMin =  Integer.parseInt(scanner.nextLine());
+                if (capacidadMin <= 0){
+                    System.out.println("Error: el valor ingresado debe ser mayor a 0: ");
+                }else{
+                    break;
+                }
+            }catch (NumberFormatException e) {
+                System.out.println("Error: Debe de ingresar un numero.");
+            }
+        }while(true);
+        
+        System.out.println("=== Los vehiculos con capacidad maoyar a " + capacidadMin + " ===");
+        for(int i = 0; i < vehiculos.size(); i ++){
+            if (vehiculos.get(i).getCapacidadPasajeros() > capacidadMin){
+                System.out.println(vehiculos.get(i).toString());
+                capacidadEncontrada = true; 
+            }
+        }
+        
+        if (!capacidadEncontrada){
+            System.out.println("No se encontro ningun vahiculo con capacidad mayor a la ingresada.");
+        }
+        
+        System.out.println("========================================\n");
     }
 }
 

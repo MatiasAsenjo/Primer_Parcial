@@ -12,6 +12,8 @@ public class Main {
         
         Scanner scanner = new Scanner(System.in);
         
+        SistemaGestion gestion = new SistemaGestion();
+        
         int opcion = 0;
         
         do {
@@ -27,16 +29,19 @@ public class Main {
             switch (opcion) {
                 case 1:
                     System.out.println("opcion 1");
-                    //Vehiculos.agregarVehiculos();
+                    gestion.agregarVehiculo();
                     break;
                 case 2:
                     System.out.println("opcion 2");
+                    gestion.mostrarVehiculos();
                     break;
                 case 3:
                     System.out.println("opcion 3");
+                    gestion.realizarServiciosTuristiccos();
                     break;
                 case 4:
                     System.out.println("opcion 4");
+                    gestion.busarVehiculoPatente();
                     break;
                 case 5:
                     System.out.println("opcion 5");
