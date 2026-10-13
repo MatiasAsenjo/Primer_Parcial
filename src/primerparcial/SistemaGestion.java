@@ -1,6 +1,7 @@
 package primerparcial;
 
 import java.util.ArrayList;
+import java.util.*;
 import java.util.Scanner;
 
 
@@ -269,6 +270,25 @@ public class SistemaGestion {
         }
         
         System.out.println("========================================\n");
+    }
+    
+    public void anioDescendente(){
+        
+        if (vehiculos.isEmpty()){
+            System.out.println("=======================");
+            System.out.println("NO hay vehiculos registrados.");
+            System.out.println("=======================\n");
+            return;
+        }
+        
+        Collections.sort(vehiculos);
+        
+        System.out.println("=== Vehiculos Ordenados por Año Descendente ===");
+        for(int i = 0; i < vehiculos.size(); i++){
+            System.out.println(vehiculos.get(i).toString());
+        }
+        
+        System.out.println("============================\n");
     }
 }
 

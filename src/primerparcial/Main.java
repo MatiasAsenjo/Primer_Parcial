@@ -45,9 +45,11 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("opcion 5");
+                    gestion.vehiculoMayorCapacidad();
                     break;
                 case 6:
                     System.out.println("opcion 6");
+                    gestion.anioDescendente();
                     break;
                 case 7:
                     System.out.println("opcion 7");

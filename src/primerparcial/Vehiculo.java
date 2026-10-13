@@ -2,7 +2,7 @@
 package primerparcial;
 
 
-public abstract class Vehiculo{
+public abstract class Vehiculo implements Comparable<Vehiculo>{
     
     private String patente;
     private String marca;
@@ -67,6 +67,9 @@ public abstract class Vehiculo{
         return this.patente.equalsIgnoreCase(vehiculo.patente);
     }
               
-     
+    @Override
+    public int compareTo(Vehiculo vehiculoComparar){
+        return Integer.compare(vehiculoComparar.getAnioFabricacion(), this.anioFabricacion);
+    }
     
 }
