@@ -19,7 +19,7 @@ public class VanEjecutiva extends Vehiculo{
 
     @Override
     public String toString() {
-        return "Van Ejecutiva: " + super.toString() + "\n-Aire acondicionado: " + tieneAire(aireAcondicionado); 
+        return "Van Ejecutiva: " + super.toString() + "\n-Aire acondicionado: " + tieneAire(aireAcondicionado) + "\n"; 
     }
 
     @Override

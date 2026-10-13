@@ -77,11 +77,18 @@ public class SistemaGestion {
             }
         }while(!patenteValido);
         
-        
-        System.out.println("=============================");
-        System.out.println("Ingrese la marca: ");
-        marca = scanner.nextLine();
-        
+        do{
+            System.out.println("=============================");
+            System.out.println("Ingrese la marca: ");
+            marca = scanner.nextLine().trim();
+            
+            if(marca.isEmpty()){
+               System.out.println("Error: Marca esta vacia: ");
+               continue;
+            }else{
+                break;
+            }
+        }while(true);
         
         do{
             System.out.println("=============================");
@@ -108,7 +115,7 @@ public class SistemaGestion {
             
             try {
                 anioFabricacion = Integer.parseInt(scanner.nextLine());
-                if (anioFabricacion >1990 && anioFabricacion < 2026){
+                if (anioFabricacion >= 1990 && anioFabricacion <= 2026){
                     anioValido = true;
                 }
                 else{
@@ -185,8 +192,9 @@ public class SistemaGestion {
     
     public void mostrarVehiculos() {
         if (vehiculos.isEmpty()) {
-            System.out.println("\n=========================");
+            System.out.println("=========================");
             System.out.println("No hay vehiculos registrados.");
+            System.out.println("=======================\n");
             return;
         }
         System.out.println("=== Los Vehiculos Registrados ====");
@@ -201,6 +209,7 @@ public class SistemaGestion {
         if (vehiculos.isEmpty()){
             System.out.println("\n=========================");
             System.out.println("No hay vehiculos registrados.");
+            System.out.println("\n=========================");
             return;
         }
         
@@ -216,6 +225,14 @@ public class SistemaGestion {
     }
     
     public void busarVehiculoPatente(){
+        
+        if (vehiculos.isEmpty()){
+            System.out.println("=======================");
+            System.out.println("NO hay vehiculos registrados.");
+            System.out.println("=======================\n");
+            return;
+        }
+        
         boolean patenteEncontrada = false;
         
         System.out.println("\n=========================");
@@ -239,6 +256,13 @@ public class SistemaGestion {
     }
     
     public void vehiculoMayorCapacidad(){
+        
+        if (vehiculos.isEmpty()){
+            System.out.println("=======================");
+            System.out.println("NO hay vehiculos registrados.");
+            System.out.println("=======================\n");
+            return;
+        }
         
         int capacidadMin = 0;
         boolean capacidadEncontrada = false;
@@ -289,6 +313,32 @@ public class SistemaGestion {
         }
         
         System.out.println("============================\n");
+    }
+    
+    public void pasajerosDescendente(){
+        
+        if (vehiculos.isEmpty()){
+            System.out.println("=======================");
+            System.out.println("NO hay vehiculos registrados.");
+            System.out.println("=======================\n");
+            return;
+        }
+        
+        
+        Collections.sort(vehiculos, new Comparator<Vehiculo>(){
+            @Override
+            public int compare(Vehiculo primerVehiculo, Vehiculo segundoVehiculo){
+                return Integer.compare(segundoVehiculo.getCapacidadPasajeros(), primerVehiculo.getCapacidadPasajeros());
+            }
+        });
+        
+        System.out.println("=== Vehiculos Ordenados por Capacidad de Pasajeros Descendente ===");
+        for (int i = 0; i < vehiculos.size(); i++){
+            System.out.println(vehiculos.get(i).toString());
+        }
+        
+        System.out.println("============================");
+    
     }
 }
 

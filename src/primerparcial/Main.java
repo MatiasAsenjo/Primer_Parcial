@@ -28,31 +28,32 @@ public class Main {
             
             switch (opcion) {
                 case 1:
-                    System.out.println("opcion 1");
+                    System.out.println("opcion 1: ");
                     gestion.agregarVehiculo();
                     break;
                 case 2:
-                    System.out.println("opcion 2");
+                    System.out.println("opcion 2: ");
                     gestion.mostrarVehiculos();
                     break;
                 case 3:
-                    System.out.println("opcion 3");
+                    System.out.println("opcion 3: ");
                     gestion.realizarServiciosTuristiccos();
                     break;
                 case 4:
-                    System.out.println("opcion 4");
+                    System.out.println("opcion 4: ");
                     gestion.busarVehiculoPatente();
                     break;
                 case 5:
-                    System.out.println("opcion 5");
+                    System.out.println("opcion 5: ");
                     gestion.vehiculoMayorCapacidad();
                     break;
                 case 6:
-                    System.out.println("opcion 6");
+                    System.out.println("opcion 6: ");
                     gestion.anioDescendente();
                     break;
                 case 7:
-                    System.out.println("opcion 7");
+                    System.out.println("opcion 7: ");
+                    gestion.pasajerosDescendente();
                     break;
                 case 8:
                     System.out.println("\n===============================");

@@ -11,7 +11,7 @@ public class LanchaTuristica extends Vehiculo{
 
     @Override
     public String toString() {
-        return "Lancha: " + super.toString() + "\n-Tipo de Motor: " + tipoMotor; 
+        return "Lancha: " + super.toString() + "\n-Tipo de Motor: " + tipoMotor + "\n"; 
     }
 
     @Override

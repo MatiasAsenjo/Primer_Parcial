@@ -10,7 +10,7 @@ public class ColectivoTuristico extends Vehiculo{
 
     @Override
     public String toString() {
-        return "Colectivo: " + super.toString() + "\n-Cantidad de Pisos: " + cantidadPisos; 
+        return "Colectivo: " + super.toString() + "\n-Cantidad de Pisos: " + cantidadPisos + "\n"; 
     
     }
     
